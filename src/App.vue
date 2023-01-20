@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
 import Readme from './components/Readme.vue'
 import Search from './components/Search.vue'
 import Select from './components/Select.vue'
