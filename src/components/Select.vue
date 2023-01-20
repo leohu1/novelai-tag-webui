@@ -97,6 +97,5 @@ const getNum = (tag) => {
   z-index: 9;
   position: sticky;
   top: 0;
-  background: #fff;
 }
 </style>

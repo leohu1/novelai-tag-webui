@@ -18,7 +18,7 @@ def on_app_started(demo: Optional[gr.Blocks], app: FastAPI):
 def on_ui_tabs():
     html = f"""<iframe id="tab_iframe" allow="clipboard-read; clipboard-write" 
     style="width: 100%; min-height: 1080px; padding: 0;margin: 0;border: none;" 
-    src="/novelai_tag_webui" frameborder="0" marginwidth="0" marginheight="0"/>"""
+    src="/novelai_tag_webui{"?theme="+shared.cmd_opts.theme if shared.cmd_opts.theme is not None}" frameborder="0" marginwidth="0" marginheight="0"/>"""
     with gr.Blocks(analytics_enabled=False) as novelai_tag_webui:
         gr.HTML(html)
     return (novelai_tag_webui , "Novelai Tags", "novelai_tag_webui"),
