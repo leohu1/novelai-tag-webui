@@ -12,7 +12,7 @@ extension_dir = scripts.basedir()
 # don't use scripts.basedir() in function, or it will return the rootpath of webui.
 
 def on_app_started(demo: Optional[gr.Blocks], app: FastAPI):
-    app.mount('/novelai_tag_webui', StaticFiles(directory=os.path.join(extension_dir, "dist"),html=True))	
+    app.mount('/novelai_tag_webui', StaticFiles(directory=os.path.join(extension_dir, "./dist"),html=True))	
 
 
 def on_ui_tabs():
