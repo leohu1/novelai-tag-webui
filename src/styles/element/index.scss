@@ -1,2 +1,23 @@
-@use './common.scss';
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': green,
+    ),
+  ),
+  $bg-color: (
+    '': rgb(255, 255, 255),
+    'page': rgb(255, 255, 255),
+    'overlay': rgb(255, 255, 255),
+  ),
+  $fill-color: (
+    '': rgb(255, 255, 255),
+    'light': rgb(255, 255, 255),
+    'lighter': rgb(255, 255, 255),
+    'extra-light': rgb(255, 255, 255),
+    'dark': rgb(255, 255, 255),
+    'darker': rgb(255, 255, 255),
+    'blank': rgb(255, 255, 255),
+  )
+);
+
 @use './dark.scss';

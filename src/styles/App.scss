@@ -1,7 +1,5 @@
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
 
-
-
 body {
   margin: 0
 }
@@ -10,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: var(--el-bg-color);
 }
 
 ::-webkit-scrollbar {

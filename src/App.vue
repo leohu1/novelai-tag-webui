@@ -21,7 +21,7 @@ if (params.theme){
 </script>
 
 <template>
-  <div  style="flex: 1">
+  <div style="flex: 1">
     <Readme />
     <Search />
     <Select />
