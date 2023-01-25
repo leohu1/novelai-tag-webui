@@ -94,7 +94,6 @@ const onOkClick = () => {
   position: sticky;
   bottom: 0;
   display: flex;
-  background: #eee;
   flex-direction: column;
   align-items: center;
   padding: 5px 5px 0 5px;
@@ -102,7 +101,6 @@ const onOkClick = () => {
 
 .card {
   font-size: 12px;
-  color: #999;
 }
 
 .btn {
