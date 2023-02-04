@@ -1,41 +1,21 @@
-@use 'sass:map';
-
-// CSS3 var
-@use 'element-plus/theme-chalk/src/dark/var' as *;
-@use 'element-plus/theme-chalk/src/mixins/_var.scss' as *;
-@use 'element-plus/theme-chalk/src/mixins/mixins.scss' as *;
-
-.theme_container[class*="dark"] {
-  color-scheme: dark;
-
-  // hex colors
-  @each $type in (primary, success, warning, danger, error, info) {
-    @include set-css-color-type($colors, $type);
-  }
-
-  // --el-box-shadow-#{$type}
-  @include set-component-css-var('box-shadow', $box-shadow);
-
-  // color-scheme
-  // Background --el-bg-color-#{$type}
-  @include set-component-css-var('bg-color', $bg-color);
-  // --el-text-color-#{$type}
-  @include set-component-css-var('text-color', $text-color);
-  // --el-border-color-#{$type}
-  @include set-component-css-var('border-color', $border-color);
-  // Fill --el-fill-color-#{$type}
-  @include set-component-css-var('fill-color', $fill-color);
-  @include set-component-css-var('mask-color', $mask-color);
-}
-
-@include dark(button) {
-  @include set-component-css-var('button', $button);
-}
-
-@include dark(card) {
-  @include set-component-css-var('card', $card);
-}
-
-@include dark(empty) {
-  @include set-component-css-var('empty', $empty);
-}
+@forward "element-plus/theme-chalk/src/dark/var.scss" with (
+  $colors: (
+    'primary': (
+      'base': green,
+    ),
+  ),
+  $bg-color: (
+    '': rgb(11, 15, 25),
+    'page': rgb(11, 15, 25),
+    'overlay': rgb(11, 15, 25),
+  ),
+  $fill-color: (
+    '': rgb(11, 15, 25),
+    'light': rgb(11, 15, 25),
+    'lighter': rgb(11, 15, 25),
+    'extra-light': rgb(11, 15, 25),
+    'dark': rgb(11, 15, 25),
+    'darker': rgb(11, 15, 25),
+    'blank': rgb(11, 15, 25),
+  )
+);

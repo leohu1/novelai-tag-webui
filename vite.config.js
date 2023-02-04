@@ -18,14 +18,14 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "~/styles/element/index.scss" as *;`,
+        additionalData: `@use "~/styles/theme/index.scss" as *;`,
       },
     },
   },
   plugins: [
     vue({customElement:true}),
     yaml(),
-    ElementPlus(),
+    // ElementPlus(),
     AutoImport({
       resolvers: [ElementPlusResolver({ importStyle: false })],
     }),

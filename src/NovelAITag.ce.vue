@@ -11,34 +11,30 @@ const [isDark, toggleDark] = useToggle()
 const isPreferredDark = usePreferredDark()
 console.log(isPreferredDark.value)
 
-if (params.theme){
+if (params.theme) {
   toggleDark(params.theme == "dark" ? true : false)
-}else{
+} else {
   toggleDark(isPreferredDark.value)
 }
 
 </script>
 
 <template>
-  <div :class="isDark ? 'theme_container dark' : 'theme_container'">
-    <div>
+  <div class="theme_container">
+    <div class="theme_controller container" :class="isDark ? 'dark' : ''">
+      <div>
       <Readme />
       <Search />
       <Select />
     </div>
     <Selected />
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-@use "./styles/theme/dark.scss" as *;
-
-.theme_container{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: var(--el-bg-color);
-  @import "element-plus/theme-chalk/src/base.scss";
+.theme_container {
+  @import "~/styles/base.scss";
   @import "element-plus/theme-chalk/src/button.scss";
   @import "element-plus/theme-chalk/src/card.scss";
   @import 'element-plus/theme-chalk/src/collapse-item.scss';
@@ -48,8 +44,15 @@ if (params.theme){
   @import 'element-plus/theme-chalk/src/tag.scss';
   @import 'element-plus/theme-chalk/src/tab-pane.scss';
   @import 'element-plus/theme-chalk/src/tabs.scss';
-
 }
+
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--el-bg-color);
+}
+
 .el-tabs__header {
   z-index: 9;
   position: sticky;

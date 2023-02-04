@@ -3,7 +3,6 @@ import { Close, Check, Delete, Switch } from '@element-plus/icons-vue'
 import { computed } from '@vue/reactivity'
 import { selectList } from '../store/data'
 import { ElMessage } from 'element-plus'
-import 'element-plus/es/components/message/style/css'
 import { ref, watch } from 'vue'
 
 const isShow = computed(() => Object.keys(selectList.value).length > 0)
