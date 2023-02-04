@@ -71,31 +71,22 @@ const getNum = (tag) => {
 
 <style lang="scss" scoped>
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 
-  .card {
-    cursor: pointer;
-    margin: 5px;
-    height: 80px;
+    .card {
+        cursor: pointer;
+        margin: 5px;
+        height: 80px;
 
-    .value {
-      font-size: 12px;
-      color: #999;
+        .value {
+            font-size: 12px;
+            color: #999;
+        }
     }
-  }
-}
-
-.selected {
-  border: 1px solid var(--el-color-primary);
-}
-</style>
-
-<style lang="scss">
-.el-tabs__header {
-  z-index: 9;
-  position: sticky;
-  top: 0;
+    .selected {
+        border: 1px solid var(--el-color-primary);
+    }
 }
 </style>

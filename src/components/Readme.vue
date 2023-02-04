@@ -34,20 +34,19 @@ for (const i in tags) {
 
 <style lang="scss" scoped>
 .readme {
-  margin: 5px;
-}
-
-.title {
-  text-align: center;
-  margin: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  width: 100%;
-}
-
-.text {
-  font-size: 12px;
-  color: #999;
-  text-align: center;
+    margin: 5px;
+    .title {
+        text-align: center;
+        margin: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+    }
+    
+    .text {
+        font-size: 12px;
+        color: #999;
+        text-align: center;
+    }
 }
 </style>

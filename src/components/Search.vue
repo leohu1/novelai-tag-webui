@@ -25,12 +25,12 @@ const search = () => {
 </script>
 
 <template>
-  <el-input class="input" v-model="searchValue" placeholder="请输入搜索关键字" @input="search" />
+  <el-input class="search_box" v-model="searchValue" placeholder="请输入搜索关键字" @input="search" />
 </template>
 
 <style lang="scss" scoped>
-.input {
-  margin: 5px;
-  width: calc(100% - 10px);
+.search_box {
+    margin: 5px;
+    width: calc(100% - 10px);
 }
 </style>

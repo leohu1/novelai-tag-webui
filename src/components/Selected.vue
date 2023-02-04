@@ -91,19 +91,18 @@ const onOkClick = () => {
 
 <style lang="scss" scoped>
 .bottom-bar {
-  position: sticky;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px 5px 0 5px;
-}
-
-.card {
-  font-size: 12px;
-}
-
-.btn {
-  margin: 3px 5px;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 5px 0 5px;
+    .card {
+        font-size: 12px;
+    }
+    
+    .btn {
+        margin: 3px 5px;
+    }
 }
 </style>

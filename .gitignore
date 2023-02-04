@@ -21,4 +21,5 @@ node_modules
 *.sln
 *.sw?
 *.d.ts
+*.pyc
 pnpm-lock.yaml
