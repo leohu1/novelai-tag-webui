@@ -24,8 +24,7 @@ for (const i in tags) {
           </div>
         </template>
         <div class="text">
-          <!-- <span>没想好</span> -->
-          <el-link href="https://github.com/blacktunes/novelai-tag">Github</el-link>
+          <el-link href="https://github.com/leohu1/novelai-tag-webui">Github</el-link>
         </div>
       </el-collapse-item>
     </el-collapse>
