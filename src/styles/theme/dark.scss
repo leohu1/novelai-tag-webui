@@ -1,21 +1,21 @@
 @forward "element-plus/theme-chalk/src/dark/var.scss" with (
   $colors: (
     'primary': (
-      'base': green,
+      'base': orange,
     ),
   ),
   $bg-color: (
-    '': rgb(11, 15, 25),
-    'page': rgb(11, 15, 25),
-    'overlay': rgb(11, 15, 25),
+    '': transparent,
+    'page': transparent,
+    'overlay': transparent,
   ),
   $fill-color: (
-    '': rgb(11, 15, 25),
-    'light': rgb(11, 15, 25),
-    'lighter': rgb(11, 15, 25),
-    'extra-light': rgb(11, 15, 25),
-    'dark': rgb(11, 15, 25),
-    'darker': rgb(11, 15, 25),
-    'blank': rgb(11, 15, 25),
+    '': transparent,
+    'light': transparent,
+    'lighter': transparent,
+    'extra-light': transparent,
+    'dark': transparent,
+    'darker': transparent,
+    'blank': transparent,
   )
 );
