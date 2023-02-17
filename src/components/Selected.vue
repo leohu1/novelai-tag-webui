@@ -3,12 +3,13 @@ import { Close, Check, Delete, Switch } from '@element-plus/icons-vue'
 import { computed } from '@vue/reactivity'
 import { selectList } from '../store/data'
 import { ElMessage } from 'element-plus'
-import { ref, watch } from 'vue'
+import { inject, ref, watch } from 'vue'
 
 const isShow = computed(() => Object.keys(selectList.value).length > 0)
 
 const showMode = ref(false)
 const txt = ref('')
+const messageContainer = inject("messageContainer")
 
 watch(selectList.value, () => {
   if (Object.keys(selectList.value).length < 1) {
@@ -39,9 +40,34 @@ const onOkClick = () => {
   navigator.clipboard.writeText(txt.value).then((res) => {
     ElMessage({
       showClose: true,
-      message: '已复制到剪切板'
+      message: '已复制到剪切板',
+      type: 'success',
+      appendTo: messageContainer.value,
     })
   })
+}
+
+const onSendToTxt2Img = () => {
+  if (typeof gradioApp !== 'undefined') {
+    try {
+      gradioApp().querySelector("#txt2img_prompt textarea").value = txt.value
+      gradioApp().querySelector('#tabs').querySelectorAll('button')[0].click();
+    } catch (error) {
+      ElMessage({
+        showClose: true,
+        message: '无法发送到Txt2Img',
+        type: 'error',
+        appendTo: messageContainer.value,
+      })
+    }
+  } else {
+    ElMessage({
+      showClose: true,
+      message: '未找到gradio环境',        
+      type: 'error',
+      appendTo: messageContainer.value,
+    })
+  }
 }
 </script>
 
@@ -53,12 +79,7 @@ const onOkClick = () => {
       </el-card>
     </div>
     <div class="btn-list" v-else>
-      <el-button
-        v-for="(_item, key) in selectList"
-        :key="`selected-${key}`"
-        @click="onSelectedClick(key)"
-        class="btn"
-      >
+      <el-button v-for="(_item, key) in selectList" :key="`selected-${key}`" @click="onSelectedClick(key)" class="btn">
         {{ key }}
         <el-icon class="el-icon--right">
           <Close />
@@ -84,24 +105,31 @@ const onOkClick = () => {
           <Check />
         </el-icon>
       </el-button>
+      <el-button type="primary" @click="onSendToTxt2Img" class="btn">
+        Send To Txt2Img
+        <el-icon class="el-icon--right">
+          <Check />
+        </el-icon>
+      </el-button>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .bottom-bar {
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 5px 0 5px;
-    .card {
-        font-size: 12px;
-    }
-    
-    .btn {
-        margin: 3px 5px;
-    }
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 5px 0 5px;
+
+  .card {
+    font-size: 12px;
+  }
+
+  .btn {
+    margin: 3px 5px;
+  }
 }
 </style>
